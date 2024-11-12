@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.NonNull;
 
 @Data
-@Entity
 @AllArgsConstructor
 @NoArgsConstructor
 public class QuestionModel {
