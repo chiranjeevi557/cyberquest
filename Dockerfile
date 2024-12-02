@@ -1,15 +1,14 @@
-# Use an OpenJDK base image
+# Use an OpenJDK base image to run the Spring Boot application
 FROM openjdk:17-jdk-slim
 
-# Set the working directory in the container
+# Set the working directory inside the container
 WORKDIR /app
 
-# Copy the Spring Boot JAR file into the container
-COPY target/your-application.jar app.jar
+# Copy the JAR file from the local target directory into the container
+COPY target/otp-generation-0.0.1-SNAPSHOT.jar app.jar
 
-# Expose the port on which the application will run
+# Expose the port your Spring Boot application listens on (default: 8080)
 EXPOSE 8080
 
-# Command to run
-# Command to run the Spring Boot application
+# Run the Spring Boot application
 ENTRYPOINT ["java", "-jar", "app.jar"]
